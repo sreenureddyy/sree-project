@@ -1,0 +1,55 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+	<ui:define name="title">
+		<h:outputText value="Left-Side Panel" />
+	</ui:define>
+
+
+	<ui:define name="page-header">
+		<h:outputText value="Header" />
+	</ui:define>
+
+	<ui:define name="section-title">
+		<h:outputText value="Title" />
+	</ui:define>
+
+	<f:view>
+		<h:form id="leftSidePage">
+			<rich:panelBar contentStyle="background:none;">
+				<rich:panelBarItem label="Utils">
+					<ul>
+						<li><h:commandLink style="text-decoration: none;"
+							action="sms" value="Send SMS" /></li>
+						<li><h:commandLink style="text-decoration: none;"
+							action="report" value="Report" /></li>
+						<li><h:commandLink style="text-decoration: none;"
+							action="chart" value="Chart" /></li>
+						<li><h:commandLink style="text-decoration: none;"
+							action="user" value="User" /></li>
+						<li><h:commandLink style="text-decoration: none;"
+							action="fileUpload" value="File Upload" /></li>
+					</ul>
+				</rich:panelBarItem>
+
+				<rich:panelBarItem label="Admin">
+			            Ajax4jsf is fully integrated into the JSF lifecycle. While other frameworks only 
+			            give you access to the managed bean facility, Ajax4jsf advantages the action and value 
+			            change listeners as well as invokes server-side validators and converters during the 
+			            AJAX request-response cycle.
+       			 </rich:panelBarItem>
+
+				<rich:panelBarItem label="Library">
+			            Ajax4jsf is fully integrated into the JSF lifecycle. While other frameworks only 
+			            give you access to the managed bean facility, Ajax4jsf advantages the action and value 
+			            change listeners as well as invokes server-side validators and converters during the 
+			            AJAX request-response cycle.
+       			 </rich:panelBarItem>
+			</rich:panelBar>
+		</h:form>
+	</f:view>
+</ui:composition>

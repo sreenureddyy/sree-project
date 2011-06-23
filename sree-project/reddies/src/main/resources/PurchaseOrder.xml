@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PurchaseOrder>
+    <Company>
+        <Name>ACME Company</Name>
+        <Address1>ADDRESS LINE 1</Address1>
+        <Address2 />
+        <City>Ghaziabad</City>
+        <State>UP</State>
+        <PostCode>201010</PostCode>
+        <Phone>0120 99999999</Phone>
+        <Fax>0120 99999999</Fax>
+        <SalesTaxCertificate>E9999999</SalesTaxCertificate>
+    </Company>
+    <Supplier>
+        <SupplierCode>9999</SupplierCode>
+        <Name>SUPPLIER XYZ</Name>
+        <Address1>ADDRESS LINE 1</Address1>
+        <Address2 />
+        <City>Ghaziabad</City>
+        <State>UP</State>
+        <PostCode>201010</PostCode>
+        <Contact>J BOCKS</Contact>
+    </Supplier>
+    <OrderHeader>
+        <OrderType>ST</OrderType>
+        <OrderNumber>00099999</OrderNumber>
+        <OrderDate>2009-06-26T00:00:00</OrderDate>
+        <ReceivingSite>01</ReceivingSite>
+        <ReceivingWarehouse>01</ReceivingWarehouse>
+        <Cancelled>Y</Cancelled>
+        <Reprint>N</Reprint>
+        <BuyerName>Buyer Name</BuyerName>
+        <BuyerPhone>0120 99999999</BuyerPhone>
+        <Currency>INR</Currency>
+        <PrintDate>2009-06-26T14:00:42</PrintDate>
+        <DeliveryInstructionCode>9</DeliveryInstructionCode>
+        <DeliveryInstructions>NOTE: On completion, Please fax a copy
+            of the invoice (Include Order No) to
+            </DeliveryInstructions>
+        <DeliveryLocationCode>4</DeliveryLocationCode>
+        <DeliveryLocation>OCS CENTRAL WAREHOUSE ADDRESS
+        </DeliveryLocation>
+        <SpecialInstructionCode />
+        <SpecialInstructions />
+        <OrderTerms>NETT FROM STATEMENT 30 DAYS</OrderTerms>
+        <Revision>0</Revision>
+        <Remarks />
+    </OrderHeader>
+    <OrderLines>
+        <Line>
+            <LineNumber>0001</LineNumber>
+            <Action />
+            <DestinationSite>01</DestinationSite>
+            <DestinationWarehouse>01</DestinationWarehouse>
+            <DueDate>2009-06-30T00:00:00</DueDate>
+            <Agreement />
+            <Quantity>1.0000</Quantity>
+            <UnitPurchase>EA</UnitPurchase>
+            <Requisition />
+            <Status>Active</Status>
+            <Priority>U</Priority>
+            <UnitPrice>21.0000</UnitPrice>
+            <LineValue>21.00</LineValue>
+            <GSTValue>2.10</GSTValue>
+            <DiscountValue>0.00</DiscountValue>
+            <SalesTaxDescription>TAX EXEMPT</SalesTaxDescription>
+            <SalesTaxValue>0.00</SalesTaxValue>
+            <GSTExempt>N</GSTExempt>
+            <FreightValue>0.00</FreightValue>
+            <OnCostValue>0.00</OnCostValue>
+            <StockNumber>00004004</StockNumber>
+            <SubStock>01</SubStock>
+            <ItemDescription>FLANGE PIPE BLACK 250MM NB BST D 10IN
+                ABC</ItemDescription>
+            <PatternedDescription />
+            <UnpatternedDescription />
+            <Manufacturer>BLKWOODS</Manufacturer>
+            <PartNumber>03230505</PartNumber>
+            <TBACode />
+            <TBADetails />
+            <LineRemarks />
+            <PackingInstructions />
+        </Line>
+        <Line>
+            <LineNumber>0002</LineNumber>
+            <Action />
+            <DestinationSite>01</DestinationSite>
+            <DestinationWarehouse>01</DestinationWarehouse>
+            <DueDate>2009-06-30T00:00:00</DueDate>
+            <Agreement />
+            <Quantity>50.0000</Quantity>
+            <UnitPurchase>ROLL</UnitPurchase>
+            <Requisition />
+            <Status>Active</Status>
+            <Priority>U</Priority>
+            <UnitPrice>0.3700</UnitPrice>
+            <LineValue>18.50</LineValue>
+            <GSTValue>1.85</GSTValue>
+            <DiscountValue>0.00</DiscountValue>
+            <SalesTaxDescription>TAX EXEMPT</SalesTaxDescription>
+            <SalesTaxValue>0.00</SalesTaxValue>
+            <GSTExempt>N</GSTExempt>
+            <FreightValue>0.00</FreightValue>
+            <OnCostValue>0.00</OnCostValue>
+            <StockNumber>00006219</StockNumber>
+            <SubStock>01</SubStock>
+            <ItemDescription>TAPE THREAD SEALING 12MM X 10M TEFLON
+                PTFE</ItemDescription>
+            <PatternedDescription />
+            <UnpatternedDescription />
+            <Manufacturer>BLKWOODS</Manufacturer>
+            <PartNumber>05122404</PartNumber>
+            <TBACode />
+            <TBADetails />
+            <LineRemarks />
+            <PackingInstructions />
+        </Line>
+    </OrderLines>
+    <OrderTotals>
+        <FreightTotal>0.00</FreightTotal>
+        <OnCostTotal>0.00</OnCostTotal>
+        <OrderTotal>43.45</OrderTotal>
+    </OrderTotals>
+</PurchaseOrder>

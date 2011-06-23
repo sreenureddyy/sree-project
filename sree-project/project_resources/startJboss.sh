@@ -1,0 +1,43 @@
+JAVA_HOME=/usr/java
+export JAVA_HOME
+
+PROJECT_NAME_INSTALL_DIR=/export/home/weblogic/PROJECT_NAME
+
+path=${path}:${PROJECT_NAME_INSTALL_DIR}/bin:${JAVA_HOME}/bin
+export path
+echo "path=$path"
+JAVA_OPTS="${JAVA_OPTS} -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
+JAVA_OPTS="${JAVA_OPTS} -Xmx512m"
+JAVA_OPTS="${JAVA_OPTS} -DPROJECT_NAME_INSTALL_DIR=${PROJECT_NAME_INSTALL_DIR}"
+JAVA_OPTS="${JAVA_OPTS} -DUSER_TRANS_JNDI_NAME=UserTransaction"
+JAVA_OPTS="${JAVA_OPTS} -DPROJECT_NAME_DATA_SOURCE=java:/PROJECT_NAMEDS"
+JAVA_OPTS="${JAVA_OPTS} -DPROJECT_NAME_PROTOCOL=jnp"
+JAVA_OPTS="${JAVA_OPTS} -DPROJECT_NAME_CONTEXT_FACTORY=org.jnp.interfaces.NamingContextFactory"
+JAVA_OPTS="${JAVA_OPTS} -DURL_PKG_PREFIXES=org.jboss.naming:org.jnp.interfaces"
+JAVA_OPTS="${JAVA_OPTS} -XX:PermSize=1024m -XX:MaxPermSize=1024m"
+
+export JAVA_OPTS
+echo "JAVA_OPTS=$JAVA_OPTS"
+
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PROJECT_NAME_INSTALL_DIR/bin
+export LD_LIBRARY_PATH
+echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
+
+rm -r ../server/PROJECT_NAME/tmp
+rm -r ../server/PROJECT_NAME/work
+
+DIRECTORYNAME=$PROJECT_NAME_INSTALL_DIR/backup_logs/log-`date '+%y%m%d-%H%M%S'`
+
+echo OLD LOGS BEING MOVED TO $DIRECTORYNAME
+mv ../server/PROJECT_NAME/log $DIRECTORYNAME 
+echo OLD LOGS MOVED TO $DIRECTORYNAME
+echo
+echo
+echo ATTEMPTING TO START PROJECT_NAME ....
+echo
+
+nohup run.sh -c PROJECT_NAME 2>&1 >/dev/null&
+echo
+echo
+echo THE SERVER WILL COME UP IN A FEW MINUTES...
+echo

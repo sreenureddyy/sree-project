@@ -1,0 +1,59 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+	<security:http auto-config="true" access-denied-page="/login.jsf">
+		<security:intercept-url pattern="/pages/**"
+			access="ROLE_ALLACCESS, ROLE_URLACCESS" />
+		<security:intercept-url pattern="/login.jsf*" filters="none"
+			access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+		<security:form-login login-page="/login.jsf"
+			login-processing-url="/j_spring_security_check"
+			always-use-default-target="true"
+			authentication-failure-url="/login.jsf"
+			default-target-url="/pages/loading.jsp" />
+		<security:logout invalidate-session="true"
+			logout-url="/spring/logout" logout-success-url="/login.jsf" />
+	</security:http>
+
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider
+			user-service-ref="userAuthentication">
+			<security:password-encoder hash="md5" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<bean id="userAuthentication"
+		class="com.sree.security.UserAuthentication">
+	</bean>
+
+	<!-- bean id="loggerListener"
+		class="org.springframework.security.event.authentication.LoggerListener" /-->
+
+	<!-- bean id="securityAspect"
+		class="com.mycompany.security.JsfComponentSecurityAspect"
+		factory-method="aspectOf">
+		<property name="securityChecker" ref="securityChecker" />
+		</bean-->
+
+
+	<!-- bean id="securityChecker"
+		class="com.mycompany.security.AcegiSecurityChecker">
+		<property name="securityProperties">
+		<bean
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location">
+		<value>classpath:jsf-security.properties</value>
+		</property>
+		</bean>
+		</property>
+		</bean-->
+
+
+
+</beans>

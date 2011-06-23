@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:amq="http://activemq.apache.org/schema/core"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd
+		http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd
+		http://www.springframework.org/schema/jee 
+		http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+
+	<!-- Enable annotation-driven configuration and auto-detection -->
+	<context:annotation-config />
+
+	<!-- Enable component scan -->
+
+	<context:component-scan base-package="com.sree" />
+
+	<!-- bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url" value="jdbc:mysql://localhost:3306/sree" />
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="username" value="root" />
+		<property name="password" value="1250" />
+		</bean-->
+
+	<jee:jndi-lookup id="dataSource"
+		jndi-name="java:comp/env/jdbc/sreedb" resource-ref="true"
+		lookup-on-startup="true" />
+
+	<jee:jndi-lookup id="jmsConnectionFactory"
+		jndi-name="java:comp/env/jms/ConnectionFactory" resource-ref="true"
+		lookup-on-startup="true" />
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="persistenceUnitName" value="sree" />
+		<property name="jpaVendorAdapter">
+			<bean
+				class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="generateDdl" value="true" />
+				<property name="showSql" value="true" />
+				<property name="databasePlatform"
+					value="com.sree.mysqlDialect.MySql5Fix" />
+			</bean>
+		</property>
+	</bean>
+
+	<!-- Use @Transactional annotation on methods -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+
+	<!--
+		Enable processing of PersistenceUnit and PersistenceContext
+		annotations
+	-->
+	<bean
+		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+
+	<!-- Persistence exception translation for Repositories -->
+	<bean
+		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+	<!--
+		Instruct Spring to retrieve and apply @AspectJ aspects which are
+		defined as beans in this context (such as the UsageLogAspect below).
+	-->
+	<!-- aop:aspectj-autoproxy /-->
+
+
+	<!-- Captcha -->
+
+	<bean id="imageCaptchaService"
+		class="com.octo.captcha.service.image.DefaultManageableImageCaptchaService"
+		scope="session" />
+
+	<!-- Captcha / -->
+
+
+</beans>

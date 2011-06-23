@@ -1,0 +1,120 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+	<f:view>
+		<h:form>
+			<div class="ajaxProcessIcon"><a4j:status id="ajaxProcessIcon"
+				style="vertical-align: middle">
+				<f:facet name="start">
+					<h:graphicImage value="images/loading/loading_orange.gif" />
+				</f:facet>
+			</a4j:status></div>
+			<h:panelGrid columns="2">
+				<h:panelGroup>
+					<h:outputText value="Change Skin :" />
+				</h:panelGroup>
+				<rich:togglePanel id="skin_chooser"
+					value="#{skinBean.skinChooserState}" witchType="ajax"
+					stateOrder="s,b">
+					<f:facet name="s">
+						<h:panelGroup>
+							<table class="skin_line" cellpadding="0" cellspacing="10"
+								border="0">
+								<tbody>
+									<tr>
+										<td><h:commandLink value="Plain"
+											style="text-decoration: none;"
+											action="#{skinBean.changeSkin}">
+											<f:param name="s" value="plain" />
+										</h:commandLink></td>
+
+										<td><h:commandLink value="BlueSky"
+											style="text-decoration: none;"
+											action="#{skinBean.changeSkin}">
+											<f:param name="s" value="blueSky" />
+										</h:commandLink></td>
+
+
+										<td><h:commandLink value="Classic"
+											style="text-decoration: none;"
+											action="#{skinBean.changeSkin}">
+											<f:param name="s" value="classic" />
+										</h:commandLink></td>
+
+										<td class="control"><rich:toggleControl
+											style="text-decoration: none;" for="skin_chooser"
+											value="more..." /></td>
+									</tr>
+								</tbody>
+							</table>
+						</h:panelGroup>
+					</f:facet>
+					<f:facet name="b">
+						<h:panelGroup>
+							<table class="skin_line" cellpadding="0" cellspacing="10"
+								border="0">
+								<tbody>
+									<tr>
+										<td><h:commandLink value="Plain"
+											style="text-decoration: none;"
+											action="#{skinBean.changeSkin}">
+											<f:param name="s" value="plain" />
+										</h:commandLink></td>
+
+										<td><h:commandLink value="BlueSky"
+											style="text-decoration: none;"
+											action="#{skinBean.changeSkin}">
+											<f:param name="s" value="blueSky" />
+										</h:commandLink></td>
+
+
+										<td><h:commandLink value="Classic"
+											style="text-decoration: none;"
+											action="#{skinBean.changeSkin}">
+											<f:param name="s" value="classic" />
+										</h:commandLink></td>
+
+										<td><h:commandLink value="DeepMarine"
+											style="text-decoration: none;"
+											action="#{skinBean.changeSkin}">
+											<f:param name="s" value="deepMarine" />
+										</h:commandLink></td>
+
+										<td><h:commandLink value="Ruby"
+											style="text-decoration: none;"
+											action="#{skinBean.changeSkin}">
+											<f:param name="s" value="ruby" />
+										</h:commandLink></td>
+
+										<td><h:commandLink value="EmeraldTown"
+											style="text-decoration: none;"
+											action="#{skinBean.changeSkin}">
+											<f:param name="s" value="emeraldTown" />
+										</h:commandLink></td>
+
+										<td><h:commandLink value="Wine"
+											style="text-decoration: none;"
+											action="#{skinBean.changeSkin}">
+											<f:param name="s" value="wine" />
+										</h:commandLink></td>
+
+										<ui:remove>
+											<td>Null <f:param value="NULL" name="s" /></td>
+										</ui:remove>
+										<td class="control"><rich:toggleControl
+											style="text-decoration: none;" for="skin_chooser"
+											value="...less" /></td>
+									</tr>
+								</tbody>
+							</table>
+						</h:panelGroup>
+					</f:facet>
+				</rich:togglePanel>
+			</h:panelGrid>
+		</h:form>
+	</f:view>
+</ui:composition>
