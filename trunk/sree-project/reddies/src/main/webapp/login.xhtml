@@ -1,0 +1,65 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich" template="/logintemplate.xhtml">
+
+	<ui:define name="title">
+		<h:outputText value="Sample" />
+	</ui:define>
+
+
+	<ui:define name="page-header">
+		<h:outputText value="Header" />
+	</ui:define>
+
+	<ui:define name="section-title">
+		<h:outputText value="Title" />
+	</ui:define>
+
+	<ui:define name="body">
+		<f:view>
+			<form name="form"
+				action="#{facesContext.externalContext.requestContextPath}/j_spring_security_check"
+				method="post" style="float: right; vertical-align: middle;">
+			<rich:panel>
+				<h:messages errorClass="errorMessage" />
+				<h:panelGrid columns="2">
+					<h:panelGroup>
+						<h:outputText value="#{msgs['username']}" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:inputText id="j_username" required="true" value="sree" />
+					</h:panelGroup>
+
+					<h:panelGroup>
+						<h:outputText value="#{msgs['password']}" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:inputSecret id="j_password" required="true" redisplay="true"
+							value="trinay" />
+					</h:panelGroup>
+
+					<h:panelGroup>
+					</h:panelGroup>
+					<h:panelGroup>
+						<input name="submit" type="submit" class="buttonbg"
+							value="Sign In" />
+					</h:panelGroup>
+				</h:panelGrid>
+				<h:panelGrid>
+					<h:panelGroup>
+						<rich:separator height="1" lineType="solid" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Don't have a username ?" />
+						<a href="registration.jsf"><img src="images/signup.jpg"
+							border="0" /></a>
+					</h:panelGroup>
+				</h:panelGrid>
+
+			</rich:panel></form>
+		</f:view>
+	</ui:define>
+</ui:composition>

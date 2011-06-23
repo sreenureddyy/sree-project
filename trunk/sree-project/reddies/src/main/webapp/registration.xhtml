@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Sree! Registration</title>
+<link href="css/registration.css" type="text/css" rel="stylesheet" />
+</head>
+<body id="nsreg" class="std0">
+<div id="doc">
+<div id="ft">
+<div id="mem_ft"><f:view>
+	<rich:panel header="Create an account">
+		<h:form id="registerForm">
+			<h:outputText value="Get started to Create an account" />
+			<br />
+			<br />
+
+			<h:outputText styleClass="text12"
+				value="Select Username and password" />
+			<rich:separator height="2" lineType="solid" />
+
+			<h:panelGrid cellpadding="10" cellspacing="10" columns="2">
+				<h:outputText value="First Name" />
+				<h:panelGroup>
+					<h:inputText id="firstname" required="true"
+						value="#{userRegistration.user.firstname}" />
+					<h:message for="firstname" errorClass="errorMessage" />
+				</h:panelGroup>
+
+				<h:outputText value="Last Name" />
+				<h:inputText value="#{userRegistration.user.lastname}" />
+
+
+				<h:outputText value="Gender" />
+				<h:panelGroup>
+					<h:selectOneMenu id="gender" required="true" style="width: 126px;"
+						value="#{userRegistration.user.gender}">
+						<f:selectItem itemLabel="- Select One -" itemValue="0" />
+						<f:selectItem itemLabel="Male" itemValue="1" />
+						<f:selectItem itemLabel="Female" itemValue="2" />
+					</h:selectOneMenu>
+				</h:panelGroup>
+
+
+				<h:outputText value="Birthday" />
+				<h:panelGroup>
+					<rich:calendar id="dob" required="true"
+						value="#{userRegistration.user.dob}" />
+					<h:message for="dob" errorClass="errorMessage" />
+				</h:panelGroup>
+
+				<h:outputText value="Country" />
+				<h:panelGroup>
+					<h:selectOneMenu id="country" required="true"
+						value="#{userRegistration.address.country}" style="width: 126px;">
+						<f:selectItem itemLabel="- Select One -" itemValue="NA" />
+						<f:selectItem itemValue="af" itemLabel="Afghanistan" />
+						<f:selectItem itemValue="ax" itemLabel="Aland Islands" />
+						<f:selectItem itemValue="al" itemLabel="Albania" />
+						<f:selectItem itemValue="dz" itemLabel="Algeria" />
+						<f:selectItem itemValue="as" itemLabel="American Samoa" />
+						<f:selectItem itemValue="ad" itemLabel="Andorra" />
+						<f:selectItem itemValue="ao" itemLabel="Angola" />
+						<f:selectItem itemValue="ai" itemLabel="Anguilla" />
+						<f:selectItem itemValue="aq" itemLabel="Antarctica" />
+						<f:selectItem itemValue="ag" itemLabel="Antigua and Barbuda" />
+						<f:selectItem itemValue="ar" itemLabel="Argentina" />
+						<f:selectItem itemValue="am" itemLabel="Armenia" />
+						<f:selectItem itemValue="aw" itemLabel="Aruba" />
+						<f:selectItem itemValue="au" itemLabel="Australia" />
+						<f:selectItem itemValue="at" itemLabel="Austria" />
+						<f:selectItem itemValue="az" itemLabel="Azerbaijan" />
+						<f:selectItem itemValue="bs" itemLabel="Bahamas" />
+						<f:selectItem itemValue="bh" itemLabel="Bahrain" />
+						<f:selectItem itemValue="bd" itemLabel="Bangladesh" />
+						<f:selectItem itemValue="bb" itemLabel="Barbados" />
+						<f:selectItem itemValue="by" itemLabel="Belarus" />
+						<f:selectItem itemValue="be" itemLabel="Belgium" />
+						<f:selectItem itemValue="bz" itemLabel="Belize" />
+						<f:selectItem itemValue="bj" itemLabel="Benin" />
+						<f:selectItem itemValue="bm" itemLabel="Bermuda" />
+						<f:selectItem itemValue="bt" itemLabel="Bhutan" />
+						<f:selectItem itemValue="bo" itemLabel="Bolivia" />
+						<f:selectItem itemValue="ba" itemLabel="Bosnia and Herzegovina" />
+						<f:selectItem itemValue="bw" itemLabel="Botswana" />
+						<f:selectItem itemValue="bv" itemLabel="Bouvet Island" />
+						<f:selectItem itemValue="br" itemLabel="Brazil" />
+						<f:selectItem itemValue="io"
+							itemLabel="British Indian Ocean Territory" />
+						<f:selectItem itemValue="vg" itemLabel="British Virgin Islands" />
+						<f:selectItem itemValue="bn" itemLabel="Brunei" />
+						<f:selectItem itemValue="bg" itemLabel="Bulgaria" />
+						<f:selectItem itemValue="bf" itemLabel="Burkina Faso" />
+						<f:selectItem itemValue="bi" itemLabel="Burundi" />
+						<f:selectItem itemValue="kh" itemLabel="Cambodia" />
+						<f:selectItem itemValue="cm" itemLabel="Cameroon" />
+						<f:selectItem itemValue="ca" itemLabel="Canada" />
+						<f:selectItem itemValue="cv" itemLabel="Cape Verde" />
+						<f:selectItem itemValue="ky" itemLabel="Cayman Islands" />
+						<f:selectItem itemValue="cf" itemLabel="Central African Republic" />
+						<f:selectItem itemValue="td" itemLabel="Chad" />
+						<f:selectItem itemValue="cl" itemLabel="Chile" />
+						<f:selectItem itemValue="cn" itemLabel="China" />
+						<f:selectItem itemValue="cx" itemLabel="Christmas Island" />
+						<f:selectItem itemValue="cc" itemLabel="Cocos (Keeling) Islands" />
+						<f:selectItem itemValue="co" itemLabel="Colombia" />
+						<f:selectItem itemValue="km" itemLabel="Comoros" />
+						<f:selectItem itemValue="cg" itemLabel="Congo" />
+						<f:selectItem itemValue="ck" itemLabel="Cook Islands" />
+						<f:selectItem itemValue="cr" itemLabel="Costa Rica" />
+						<f:selectItem itemValue="hr" itemLabel="Croatia" />
+						<f:selectItem itemValue="cu" itemLabel="Cuba" />
+						<f:selectItem itemValue="cy" itemLabel="Cyprus" />
+						<f:selectItem itemValue="cz" itemLabel="Czech Republic" />
+						<f:selectItem itemValue="cd"
+							itemLabel="Democratic Republic of Congo" />
+						<f:selectItem itemValue="dk" itemLabel="Denmark" />
+						<f:selectItem itemValue="xx" itemLabel="Disputed Territory" />
+						<f:selectItem itemValue="dj" itemLabel="Djibouti" />
+						<f:selectItem itemValue="dm" itemLabel="Dominica" />
+						<f:selectItem itemValue="do" itemLabel="Dominican Republic" />
+						<f:selectItem itemValue="tl" itemLabel="East Timor" />
+						<f:selectItem itemValue="ec" itemLabel="Ecuador" />
+						<f:selectItem itemValue="eg" itemLabel="Egypt" />
+						<f:selectItem itemValue="sv" itemLabel="El Salvador" />
+						<f:selectItem itemValue="gq" itemLabel="Equatorial Guinea" />
+						<f:selectItem itemValue="er" itemLabel="Eritrea" />
+						<f:selectItem itemValue="ee" itemLabel="Estonia" />
+						<f:selectItem itemValue="et" itemLabel="Ethiopia" />
+						<f:selectItem itemValue="fk" itemLabel="Falkland Islands" />
+						<f:selectItem itemValue="fo" itemLabel="Faroe Islands" />
+						<f:selectItem itemValue="fm"
+							itemLabel="Federated States of Micronesia" />
+						<f:selectItem itemValue="fj" itemLabel="Fiji" />
+						<f:selectItem itemValue="fi" itemLabel="Finland" />
+						<f:selectItem itemValue="fr" itemLabel="France" />
+						<f:selectItem itemValue="gf" itemLabel="French Guyana" />
+						<f:selectItem itemValue="pf" itemLabel="French Polynesia" />
+						<f:selectItem itemValue="tf"
+							itemLabel="French Southern Territories" />
+						<f:selectItem itemValue="ga" itemLabel="Gabon" />
+						<f:selectItem itemValue="gm" itemLabel="Gambia" />
+						<f:selectItem itemValue="ge" itemLabel="Georgia" />
+						<f:selectItem itemValue="de" itemLabel="Germany" />
+						<f:selectItem itemValue="gh" itemLabel="Ghana" />
+						<f:selectItem itemValue="gi" itemLabel="Gibraltar" />
+						<f:selectItem itemValue="gr" itemLabel="Greece" />
+						<f:selectItem itemValue="gl" itemLabel="Greenland" />
+						<f:selectItem itemValue="gd" itemLabel="Grenada" />
+						<f:selectItem itemValue="gp" itemLabel="Guadeloupe" />
+						<f:selectItem itemValue="gu" itemLabel="Guam" />
+						<f:selectItem itemValue="gt" itemLabel="Guatemala" />
+						<f:selectItem itemValue="gn" itemLabel="Guinea" />
+						<f:selectItem itemValue="gw" itemLabel="Guinea-Bissau" />
+						<f:selectItem itemValue="gy" itemLabel="Guyana" />
+						<f:selectItem itemValue="ht" itemLabel="Haiti" />
+						<f:selectItem itemValue="hm"
+							itemLabel="Heard Island and Mcdonald Islands" />
+						<f:selectItem itemValue="hn" itemLabel="Honduras" />
+						<f:selectItem itemValue="hk" itemLabel="Hong Kong" />
+						<f:selectItem itemValue="hu" itemLabel="Hungary" />
+						<f:selectItem itemValue="is" itemLabel="Iceland" />
+						<f:selectItem itemValue="in" itemLabel="India" />
+						<f:selectItem itemValue="id" itemLabel="Indonesia" />
+						<f:selectItem itemValue="ir" itemLabel="Iran" />
+						<f:selectItem itemValue="iq" itemLabel="Iraq" />
+						<f:selectItem itemValue="xe"
+							itemLabel="Iraq-Saudi Arabia Neutral Zone" />
+						<f:selectItem itemValue="ie" itemLabel="Ireland" />
+						<f:selectItem itemValue="il" itemLabel="Israel" />
+						<f:selectItem itemValue="it" itemLabel="Italy" />
+						<f:selectItem itemValue="ci" itemLabel="Ivory Coast" />
+						<f:selectItem itemValue="jm" itemLabel="Jamaica" />
+						<f:selectItem itemValue="jp" itemLabel="Japan" />
+						<f:selectItem itemValue="jo" itemLabel="Jordan" />
+						<f:selectItem itemValue="kz" itemLabel="Kazakhstan" />
+						<f:selectItem itemValue="ke" itemLabel="Kenya" />
+						<f:selectItem itemValue="ki" itemLabel="Kiribati" />
+						<f:selectItem itemValue="kw" itemLabel="Kuwait" />
+						<f:selectItem itemValue="kg" itemLabel="Kyrgyzstan" />
+						<f:selectItem itemValue="la" itemLabel="Laos" />
+						<f:selectItem itemValue="lv" itemLabel="Latvia" />
+						<f:selectItem itemValue="lb" itemLabel="Lebanon" />
+						<f:selectItem itemValue="ls" itemLabel="Lesotho" />
+						<f:selectItem itemValue="lr" itemLabel="Liberia" />
+						<f:selectItem itemValue="ly" itemLabel="Libya" />
+						<f:selectItem itemValue="li" itemLabel="Liechtenstein" />
+						<f:selectItem itemValue="lt" itemLabel="Lithuania" />
+						<f:selectItem itemValue="lu" itemLabel="Luxembourg" />
+						<f:selectItem itemValue="mo" itemLabel="Macau" />
+						<f:selectItem itemValue="mk" itemLabel="Macedonia" />
+						<f:selectItem itemValue="mg" itemLabel="Madagascar" />
+						<f:selectItem itemValue="mw" itemLabel="Malawi" />
+						<f:selectItem itemValue="my" itemLabel="Malaysia" />
+						<f:selectItem itemValue="mv" itemLabel="Maldives" />
+						<f:selectItem itemValue="ml" itemLabel="Mali" />
+						<f:selectItem itemValue="mt" itemLabel="Malta" />
+						<f:selectItem itemValue="mh" itemLabel="Marshall Islands" />
+						<f:selectItem itemValue="mq" itemLabel="Martinique" />
+						<f:selectItem itemValue="mr" itemLabel="Mauritania" />
+						<f:selectItem itemValue="mu" itemLabel="Mauritius" />
+						<f:selectItem itemValue="yt" itemLabel="Mayotte" />
+						<f:selectItem itemValue="mx" itemLabel="Mexico" />
+						<f:selectItem itemValue="md" itemLabel="Moldova" />
+						<f:selectItem itemValue="mc" itemLabel="Monaco" />
+						<f:selectItem itemValue="mn" itemLabel="Mongolia" />
+						<f:selectItem itemValue="me" itemLabel="Montenegro" />
+						<f:selectItem itemValue="ms" itemLabel="Montserrat" />
+						<f:selectItem itemValue="ma" itemLabel="Morocco" />
+						<f:selectItem itemValue="mz" itemLabel="Mozambique" />
+						<f:selectItem itemValue="mm" itemLabel="Myanmar" />
+						<f:selectItem itemValue="na" itemLabel="Namibia" />
+						<f:selectItem itemValue="nr" itemLabel="Nauru" />
+						<f:selectItem itemValue="np" itemLabel="Nepal" />
+						<f:selectItem itemValue="an" itemLabel="Netherlands Antilles" />
+						<f:selectItem itemValue="nl" itemLabel="Netherlands" />
+						<f:selectItem itemValue="nc" itemLabel="New Caledonia" />
+						<f:selectItem itemValue="nz" itemLabel="New Zealand" />
+						<f:selectItem itemValue="ni" itemLabel="Nicaragua" />
+						<f:selectItem itemValue="ne" itemLabel="Niger" />
+						<f:selectItem itemValue="ng" itemLabel="Nigeria" />
+						<f:selectItem itemValue="nu" itemLabel="Niue" />
+						<f:selectItem itemValue="nf" itemLabel="Norfolk Island" />
+						<f:selectItem itemValue="kp" itemLabel="North Korea" />
+						<f:selectItem itemValue="mp" itemLabel="Northern Mariana Islands" />
+						<f:selectItem itemValue="no" itemLabel="Norway" />
+						<f:selectItem itemValue="om" itemLabel="Oman" />
+						<f:selectItem itemValue="pk" itemLabel="Pakistan" />
+						<f:selectItem itemValue="pw" itemLabel="Palau" />
+						<f:selectItem itemValue="ps" itemLabel="Palestinian Territories" />
+						<f:selectItem itemValue="pa" itemLabel="Panama" />
+						<f:selectItem itemValue="pg" itemLabel="Papua New Guinea" />
+						<f:selectItem itemValue="py" itemLabel="Paraguay" />
+						<f:selectItem itemValue="pe" itemLabel="Peru" />
+						<f:selectItem itemValue="ph" itemLabel="Philippines" />
+						<f:selectItem itemValue="pn" itemLabel="Pitcairn Islands" />
+						<f:selectItem itemValue="pl" itemLabel="Poland" />
+						<f:selectItem itemValue="pt" itemLabel="Portugal" />
+						<f:selectItem itemValue="pr" itemLabel="Puerto Rico" />
+						<f:selectItem itemValue="qa" itemLabel="Qatar" />
+						<f:selectItem itemValue="re" itemLabel="Reunion" />
+						<f:selectItem itemValue="ro" itemLabel="Romania" />
+						<f:selectItem itemValue="ru" itemLabel="Russia" />
+						<f:selectItem itemValue="rw" itemLabel="Rwanda" />
+						<f:selectItem itemValue="sh"
+							itemLabel="Saint Helena and Dependencies" />
+						<f:selectItem itemValue="kn" itemLabel="Saint Kitts and Nevis" />
+						<f:selectItem itemValue="lc" itemLabel="Saint Lucia" />
+						<f:selectItem itemValue="pm" itemLabel="Saint Pierre and Miquelon" />
+						<f:selectItem itemValue="vc"
+							itemLabel="Saint Vincent and the Grenadines" />
+						<f:selectItem itemValue="ws" itemLabel="Samoa" />
+						<f:selectItem itemValue="sm" itemLabel="San Marino" />
+						<f:selectItem itemValue="st" itemLabel="Sao Tome and Principe" />
+						<f:selectItem itemValue="sa" itemLabel="Saudi Arabia" />
+						<f:selectItem itemValue="" itemLabel="Select One" />
+						<f:selectItem itemValue="sn" itemLabel="Senegal" />
+						<f:selectItem itemValue="rs" itemLabel="Serbia" />
+						<f:selectItem itemValue="sc" itemLabel="Seychelles" />
+						<f:selectItem itemValue="sl" itemLabel="Sierra Leone" />
+						<f:selectItem itemValue="sg" itemLabel="Singapore" />
+						<f:selectItem itemValue="sk" itemLabel="Slovakia" />
+						<f:selectItem itemValue="si" itemLabel="Slovenia" />
+						<f:selectItem itemValue="sb" itemLabel="Solomon Islands" />
+						<f:selectItem itemValue="so" itemLabel="Somalia" />
+						<f:selectItem itemValue="za" itemLabel="South Africa" />
+						<f:selectItem itemValue="gs"
+							itemLabel="South Georgia and South Sandwich Islands" />
+						<f:selectItem itemValue="kr" itemLabel="South Korea" />
+						<f:selectItem itemValue="es" itemLabel="Spain" />
+						<f:selectItem itemValue="pi" itemLabel="Spratly Islands" />
+						<f:selectItem itemValue="lk" itemLabel="Sri Lanka" />
+						<f:selectItem itemValue="sd" itemLabel="Sudan" />
+						<f:selectItem itemValue="sr" itemLabel="Suriname" />
+						<f:selectItem itemValue="sj" itemLabel="Svalbard and Jan Mayen" />
+						<f:selectItem itemValue="sz" itemLabel="Swaziland" />
+						<f:selectItem itemValue="se" itemLabel="Sweden" />
+						<f:selectItem itemValue="ch" itemLabel="Switzerland" />
+						<f:selectItem itemValue="sy" itemLabel="Syria" />
+						<f:selectItem itemValue="tw" itemLabel="Taiwan" />
+						<f:selectItem itemValue="tj" itemLabel="Tajikistan" />
+						<f:selectItem itemValue="tz" itemLabel="Tanzania" />
+						<f:selectItem itemValue="th" itemLabel="Thailand" />
+						<f:selectItem itemValue="tg" itemLabel="Togo" />
+						<f:selectItem itemValue="tk" itemLabel="Tokelau" />
+						<f:selectItem itemValue="to" itemLabel="Tonga" />
+						<f:selectItem itemValue="tt" itemLabel="Trinidad and Tobago" />
+						<f:selectItem itemValue="tn" itemLabel="Tunisia" />
+						<f:selectItem itemValue="tr" itemLabel="Turkey" />
+						<f:selectItem itemValue="tm" itemLabel="Turkmenistan" />
+						<f:selectItem itemValue="tc" itemLabel="Turks And Caicos Islands" />
+						<f:selectItem itemValue="tv" itemLabel="Tuvalu" />
+						<f:selectItem itemValue="vi" itemLabel="US Virgin Islands" />
+						<f:selectItem itemValue="ug" itemLabel="Uganda" />
+						<f:selectItem itemValue="ua" itemLabel="Ukraine" />
+						<f:selectItem itemValue="ae" itemLabel="United Arab Emirates" />
+						<f:selectItem itemValue="uk" itemLabel="United Kingdom" />
+						<f:selectItem itemValue="um"
+							itemLabel="United States Minor Outlying Islands" />
+						<f:selectItem itemValue="us" itemLabel="United States" />
+						<f:selectItem itemValue="uy" itemLabel="Uruguay" />
+						<f:selectItem itemValue="uz" itemLabel="Uzbekistan" />
+						<f:selectItem itemValue="vu" itemLabel="Vanuatu" />
+						<f:selectItem itemValue="va" itemLabel="Vatican City" />
+						<f:selectItem itemValue="ve" itemLabel="Venezuela" />
+						<f:selectItem itemValue="vn" itemLabel="Vietnam" />
+						<f:selectItem itemValue="wf" itemLabel="Wallis and Futuna" />
+						<f:selectItem itemValue="eh" itemLabel="Western Sahara" />
+						<f:selectItem itemValue="ye" itemLabel="Yemen" />
+						<f:selectItem itemValue="zm" itemLabel="Zambia" />
+						<f:selectItem itemValue="zw" itemLabel="Zimbabwe" />
+					</h:selectOneMenu>
+				</h:panelGroup>
+
+				<h:outputText value="Username" />
+				<h:panelGroup>
+					<h:inputText id="username" required="true"
+						value="#{userRegistration.user.username}" />
+					<h:message for="username" errorClass="errorMessage" />
+				</h:panelGroup>
+
+				<h:outputText value="Password" />
+				<h:panelGroup>
+					<h:inputSecret id="password" required="true"
+						value="#{userRegistration.user.password}" />
+					<h:message for="password" errorClass="errorMessage" />
+				</h:panelGroup>
+
+				<h:outputText value="Re-enter Password" />
+				<h:panelGroup>
+					<h:inputSecret id="reenterpassword" required="true"
+						value="#{userRegistration.reenterPassword}" />
+					<h:message for="reenterpassword" errorClass="errorMessage" />
+				</h:panelGroup>
+
+				<h:outputText value="Alternate email" />
+				<h:inputText value="#{userRegistration.contactDetails.contact}" />
+			</h:panelGrid>
+			<br />
+			<br />
+
+			<rich:separator height="2" lineType="solid" />
+			<h:outputText
+				value="Type the characters you see in the picture below" />
+			<h:panelGrid cellpadding="10" cellspacing="10" columns="2">
+
+				<h:panelGroup>
+					<h:outputText value="Word Verification" />
+				</h:panelGroup>
+				<h:panelGroup>
+					<h:panelGrid>
+						<!-- CaptchaImage -->
+						<rich:paint2D id="captcha"
+							width="#{userRegistration.captchaWidth}"
+							height="#{userRegistration.captchaHeight}" format="jpeg"
+							paint="#{userRegistration.paintCaptcha}"
+							data="#{userRegistration.randomString}" />
+						<h:panelGroup>
+							<h:inputText id="secureText"
+								value="#{userRegistration.secureText}" required="true">
+								<f:validator validatorId="captchaValidator" />
+							</h:inputText>
+							<h:message for="secureText" errorClass="errorMessage" />
+						</h:panelGroup>
+					</h:panelGrid>
+				</h:panelGroup>
+				<h:panelGroup>
+				</h:panelGroup>
+				<h:commandButton action="#{userRegistration.submit}"
+					value="Create My Account" />
+			</h:panelGrid>
+			<br />
+			<br />
+
+			<rich:separator height="2" lineType="solid" />
+
+			<h:outputText
+				value="Copyright © 2010 TechReddys. All rights reserved" />
+		</h:form>
+	</rich:panel>
+</f:view></div>
+</div>
+</div>
+</body>
+</html>

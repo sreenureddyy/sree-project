@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sree</groupId>
+	<artifactId>organization-domain</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+	<name>organization-domain</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<birt.version>2.3.2</birt.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>sf.net</id>
+			<name>jsf-comp maven 2 repository at sourceforge</name>
+			<url>http://jsf-comp.sourceforge.net/maven2/repository</url>
+		</repository>
+		<repository>
+			<id>JBoss</id>
+			<name>JBoss Repository</name>
+			<layout>default</layout>
+			<url>http://repository.jboss.org/maven2</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.sree</groupId>
+			<artifactId>core</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
+		<!-- dependency>
+			<groupId>com.sree</groupId>
+			<artifactId>common</artifactId>
+			<version>1.0</version>
+		</dependency-->
+	</dependencies>
+
+</project>
+

@@ -1,0 +1,50 @@
+body {
+	color: #000;
+	background: #FFF
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td
+	{
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 13px/ 1.22 arial, helvetica, clean, sans-serif; *
+	font-size: small; *
+	font: x-small
+}
+
+#doc {
+	border-left: 1px solid #AAA;
+	border-right: 1px solid #AAA;
+	margin: auto;
+	min-width: 750px;
+	text-align: left;
+	width: 57.69em;
+	background-color: #FFF
+}
+
+body {
+	background-color: #F2F2F2
+}
+
+a {
+	text-decoration: none;
+	color: #004CCA
+}
+
+#ft p {
+	color: #505050;
+	text-align: center;
+	font-size: 85%
+}
+
+.text12 {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.errorMessage {
+	color: #da3810;
+}

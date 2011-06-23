@@ -1,0 +1,31 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+	<h:form>
+		<rich:toolBar height="25" itemSeparator="line">
+			<rich:toolBarGroup>
+				<h:outputText value="Sree App..." />
+			</rich:toolBarGroup>
+
+			<rich:toolBarGroup location="right">
+				<h:outputText value="Welcome, #{userLogin.user.username}" />
+			</rich:toolBarGroup>
+
+			<rich:toolBarGroup location="right">
+				<a4j:commandButton image="images/home.png" title="Home"
+					action="home" />
+			</rich:toolBarGroup>
+
+			<rich:toolBarGroup location="right">
+				<a title="Sign Out" style="text-decoration: none;"
+					href="#{facesContext.externalContext.requestContextPath}/spring/logout">Sign
+				Out</a>
+			</rich:toolBarGroup>
+
+		</rich:toolBar>
+	</h:form>
+</ui:composition>

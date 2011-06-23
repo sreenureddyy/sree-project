@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<t:div id="${forId}" styleClass="${styleClassName}" 
+		style="#{baseBean.areGlobalMessagesPresent ? 'display:block;' : 'display:none;' }">
+		<c:if test="#{baseBean.areGlobalMessagesPresent}">
+			<t:div id="${errorPanelId}">
+				<c:forEach items="${baseBean.globalMessages}" var="message">
+					
+					<t:div styleClass="infoClass" rendered="#{message.severity.ordinal == 0}">
+						<div class="header">Information</div>
+						<div class="detail">${message.detail}</div>
+					</t:div>
+					
+					<t:div styleClass="warnClass" rendered="#{message.severity.ordinal == 1}">
+						<div class="header">Warn</div>
+						<div class="detail">${message.detail}</div>
+					</t:div>
+					<t:div styleClass="errorClass" rendered="#{message.severity.ordinal ne 1 and message.severity.ordinal ne 0}">
+						<div class="header">Error</div>
+						<div class="detail">${message.detail}</div>
+					</t:div>
+				</c:forEach>
+			</t:div>
+		</c:if>
+	</t:div>
+</ui:composition>

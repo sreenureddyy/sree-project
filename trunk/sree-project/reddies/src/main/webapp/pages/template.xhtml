@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/co"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta>
+<base
+	href="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.requestContextPath}/" />
+
+<title><ui:insert name="title">..:: Sree : Welcome ::..</ui:insert></title>
+<a4j:loadStyle
+	src="resource://org/richfaces/renderkit/html/css/extended_both.xcss" />
+<a4j:loadStyle src="/css/application.css" />
+<!-- f:loadBundle basename="#{baseBean.bundleName}" var="msgs" /-->
+<script type="text/javascript" src="js/common.js"></script>
+
+<script src="js/rounded_corners/jquery.corner.js" type="text/javascript"></script>
+
+<!-- script type="text/javascript">
+ 
+ 
+ jQuery(function(){
+ jQuery("div.rich-mpnl-shadow").corner("cc:#91B7FD top");
+ jQuery("div.rich-mpnl-content").corner("cc:#91B7FD top 5pxd");
+ jQuery("div.rich-mpnl-header").corner("cc:#FFFFFF top 5px");
+ jQuery("td.rich-tab-header").corner("top").css("background-color", "red");
+ 
+ });
+</script-->
+
+
+</head>
+
+<body>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td colspan="2"><ui:insert name="header">
+			<ui:include src="/pages/header.xhtml" />
+			<ui:include src="/pages/changeSkin.xhtml" />
+		</ui:insert></td>
+	</tr>
+	<tr>
+		<td style="width: 20%; vertical-align: top;"><ui:insert
+			name="leftnav">
+			<ui:include src="/pages/leftMenuPage.xhtml" />
+		</ui:insert></td>
+		<td style="width: 80%; vertical-align: top;"><ui:insert
+			name="body">
+		</ui:insert></td>
+		<!-- td style="width: 15%; vertical-align: top;"><ui:insert
+			name="rightnav">
+		</ui:insert></td-->
+	</tr>
+</table>
+</body>
+</html>

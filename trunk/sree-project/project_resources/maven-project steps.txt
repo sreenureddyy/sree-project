@@ -1,0 +1,18 @@
+1)Creaing the new maven project using the maven 
+
+mvn archetype:create -DgroupId=com.sree -DartifactId=maven-project
+
+2) delete the src folder
+3)open the pom.xml-file to change the packaging of your parent project to pom
+4) execute the following to create the no of modules you want
+	cd maven-project
+	mvn archetype:create -DgroupId=com.sree.common  -DartifactId=common
+	mvn archetype:create -DgroupId=com.sree.base.dao  -DartifactId=base-dao
+	mvn archetype:create -DgroupId=com.sree.base.domain -DartifactId=base-domain
+	mvn archetype:create -DgroupId=com.sree.base.service  -DartifactId=base-service
+	mvn archetype:create -DgroupId=com.sree.base.web  -DartifactId=base-web
+	mvn archetype:create -DgroupId=com.sree  -DartifactId=start-project
+	mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.sree -DartifactId=project
+5)Add dependency from module1 to the core-module
+6)mvn install
+7)mvn eclipse:eclipse

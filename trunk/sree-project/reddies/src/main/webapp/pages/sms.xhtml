@@ -1,0 +1,52 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich" template="/pages/template.xhtml">
+	<ui:define name="title">
+		<h:outputText value="SMS" />
+	</ui:define>
+
+	<ui:define name="page-header">
+		<h:outputText value="Header" />
+	</ui:define>
+
+	<ui:define name="section-title">
+		<h:outputText value="Title" />
+	</ui:define>
+
+	<ui:define name="body">
+		<f:view>
+			<h:form>
+				<h:outputText value="Send SMS"
+					style="font-size: 16px; color: Green;" />
+				<h:panelGrid columns="2">
+
+					<h:outputText value="Mobile" />
+					<h:panelGroup>
+						<h:inputText id="mobile" value="#{smsBean.message.mobile}"
+							required="true" />
+						<h:message for="mobile" errorClass="errorMessage" />
+					</h:panelGroup>
+
+					<h:outputText value="Message" />
+					<h:panelGroup>
+						<h:inputTextarea id="message" value="#{smsBean.message.message}"
+							cols="22" rows="5" required="true">
+							<f:validateLength minimum="3" maximum="140" />
+						</h:inputTextarea>
+						<h:message for="message" errorClass="errorMessage" />
+					</h:panelGroup>
+
+					<h:panelGroup>
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:commandButton value="Send Message" 
+							action="#{smsBean.sendMessage}" />
+					</h:panelGroup>
+				</h:panelGrid>
+			</h:form>
+		</f:view>
+	</ui:define>
+</ui:composition>

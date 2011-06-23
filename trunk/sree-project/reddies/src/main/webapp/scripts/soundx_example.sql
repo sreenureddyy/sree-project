@@ -1,0 +1,1 @@
+select * from alf_permission where soundex(name) like soundex('Sree')

@@ -1,0 +1,60 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:rich="http://richfaces.org/rich" template="/pages/template.xhtml">
+	<ui:define name="title">
+		<h:outputText value="Users" />
+	</ui:define>
+
+	<ui:define name="page-header">
+		<h:outputText value="Header" />
+	</ui:define>
+
+	<ui:define name="section-title">
+		<h:outputText value="Title" />
+	</ui:define>
+
+	<ui:define name="body">
+		<f:view>
+			<h:form>
+				<h:outputText value="User List"
+					style="font-size: 16px; color: Green;" />
+
+				<rich:dataTable var="user" value="#{userListBean}" id="userTable"
+					reRender="ds" rows="10">
+					<rich:column sortBy="#{user.id}" filterBy="#{user.id}"
+						filterEvent="onkeyup">
+						<f:facet name="header">
+							<h:outputLabel value="Id" />
+						</f:facet>
+						<h:outputLabel value="#{user.id}" />
+					</rich:column>
+
+					<rich:column sortBy="#{user.username}" filterBy="#{user.username}"
+						filterEvent="onkeyup">
+						<f:facet name="header">
+							<h:outputLabel value="Username" />
+						</f:facet>
+						<h:outputLabel value="#{user.username}" />
+					</rich:column>
+
+					<rich:column sortBy="#{user.dob}" filterBy="#{user.dob}"
+						filterEvent="onkeyup">
+						<f:facet name="header">
+							<h:outputLabel value="Dob" />
+						</f:facet>
+						<h:outputLabel value="#{user.dob}" />
+					</rich:column>
+
+					<f:facet name="footer">
+						<rich:datascroller id="ds" align="left" for="userTable"
+							maxPages="10" />
+					</f:facet>
+				</rich:dataTable>
+			</h:form>
+		</f:view>
+	</ui:define>
+</ui:composition>

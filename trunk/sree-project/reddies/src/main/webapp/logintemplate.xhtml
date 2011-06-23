@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"></meta>
+<base
+	href="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.requestContextPath}/" />
+
+<title><ui:insert name="title">..:: Sample : Welcome ::..</ui:insert></title>
+<a4j:loadStyle
+	src="resource://org/richfaces/renderkit/html/css/extended_both.xcss" />
+<a4j:loadStyle src="/css/base.css" />
+<a4j:loadStyle src="/css/common.css" />
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+</head>
+
+<body>
+<!-- ui:insert name="header">
+	<ui:include src="header.xhtml" />
+</ui:insert-->
+
+<div>
+<table width="100%" cellspacing="1" cellpadding="0" border="0">
+	<tr>
+		<!-- td style="width: 20%; vertical-align: top;"><ui:insert
+			name="leftnav">
+			<ui:include src="LeftMenuPage.xhtml" />
+		</ui:insert></td-->
+		<td style="width: 80%; vertical-align: top;"><ui:insert
+			name="body">
+
+		</ui:insert></td>
+		<!-- td style="width: 15%; vertical-align: top;"><ui:insert
+			name="rightnav">
+		</ui:insert></td-->
+	</tr>
+</table>
+</div>
+<div class="clear"></div>
+
+
+</body>
+</html>
