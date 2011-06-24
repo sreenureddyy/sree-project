@@ -48,7 +48,7 @@ import javax.faces.model.DataModel;
  * method that the managed bean uses) to provide the data wrapped in
  * a DataPage object that provides info on the full size of the dataset.
  */
-@SuppressWarnings("unchecked")
+
 public abstract class PagedListDataModel<T> extends DataModel {
 
     int pageSize;
