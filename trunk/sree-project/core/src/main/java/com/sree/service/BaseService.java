@@ -14,7 +14,7 @@ import com.sree.common.exception.IntegrationServiceException;
 import com.sree.domain.User;
 import com.sree.dao.IBaseDao;
 
-@SuppressWarnings("unchecked")
+
 @Transactional(rollbackFor = { ApplicationServiceException.class,
 		IntegrationServiceException.class, DomainValidationException.class,
 		BaseException.class })

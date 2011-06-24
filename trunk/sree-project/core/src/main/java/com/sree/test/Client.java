@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
 public final class Client {
 
 	public static void main(String[] args) throws Exception {
+		@SuppressWarnings("unused")
 		String xml = null;
 		try {
 			// Make a HTTP connection to the server

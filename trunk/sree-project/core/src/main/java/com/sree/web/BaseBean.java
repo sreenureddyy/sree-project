@@ -36,7 +36,7 @@ import org.springframework.web.jsf.FacesContextUtils;
 import com.sree.constants.CommonConstants;
 import com.sree.domain.User;
 
-@SuppressWarnings( { "unchecked", "serial","unused" })
+@SuppressWarnings( { "serial","unused" })
 @Component(value = "baseBean")
 @Scope(value = "request")
 public class BaseBean  implements Serializable {

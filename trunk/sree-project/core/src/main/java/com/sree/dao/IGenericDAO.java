@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-@SuppressWarnings("unchecked")
+
 public interface IGenericDAO {
 
 	public enum SORT_ORDER {

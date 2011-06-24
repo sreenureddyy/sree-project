@@ -6,7 +6,6 @@ import org.hibernate.Session;
 
 import com.sree.domain.User;
 
-@SuppressWarnings("unchecked")
 public interface IBaseService {
 	public void save(Object obj);
 
