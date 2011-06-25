@@ -24,4 +24,8 @@ public class CommonUtil {
 		} 
 		return md5;
 	}
+	
+	public static void main(String ar[]){
+		System.out.println(encript("sree"));
+	}
 }
