@@ -142,6 +142,7 @@ public class UserRegistration extends BaseBean {
 
 		userAuthority.setAuthority(authority);
 		userAuthority.setUser(user);
+		userAuthority.setCreatedBy("admin");
 
 		baseService.save(userAuthority);
 
