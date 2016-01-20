@@ -1,0 +1,1 @@
+Project have all the technologies integrated
