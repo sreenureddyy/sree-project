@@ -21,7 +21,7 @@ public class Way2SmsUtil {
 	
 	public static void main(String[] args) {
 		try {
-			sendSMS("9886919190", "trinay", "9886919190", "Test...", "Sree");
+			sendSMS("1234567890", "trinay", "1234567890", "Test...", "Sree");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
